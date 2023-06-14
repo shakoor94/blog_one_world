@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails de l'article{% endblock %}
+
+{% block body %}
+    <h1>Détails de l'article</h1>
+
+    <h2>{{ article.title }}</h2>
+    <p>{{ article.content }}</p>
+
+    <h2>Commentaires</h2>
+    {% for comment in article.comments %}
+        <div>
+            <p>Par {{ comment.getPseudo }} le {{ comment.createdAt|date('d/m/Y H:i') }}</p>
+            <p>{{ comment.content }}</p>
+        </div>
+    {% endfor %}
+
+    <h2>Laisser un commentaire</h2>
+    {{ form_start(form) }}
+    {{ form_row(form.content) }}
+    {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+{% endblock %}

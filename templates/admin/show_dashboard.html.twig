@@ -1,0 +1,132 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin - Tableau de bord
+{% endblock %}
+
+{% block body %}
+	<h1 class="title_dashboard">Tableau de bord</h1>
+
+	<div class="">
+		<div class="">
+			<h2 class="">Toutes les destinations</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Titre</th>
+						<th>Description</th>
+						<th>Image</th>
+						<th>Créée le</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for country in countries %}
+						<tr>
+							<td>{{ country.id }}</td>
+							<td>{{ country.title | length > 20 ? country.title[:20] ~ '...' : country.title }}</td>
+							<td>{{ country.description }}</td>
+							<td>
+								<div class="block_img_table">
+									<img src="{{ asset('uploads/' ~ country.image) }}" alt="{{ country.title }}">
+								</div>
+							</td>
+							<td>{{ country.createdAt|date('d/m/Y') }}</td>
+							<td>
+								<a href="{{ path('update_country', {'id': country.id}) }}" title="Modifier">
+									<i class="fa-sharp fa-solid fa-pen-to-square" style="color: #3fb116;"></i>
+									Modifier
+								</a>
+								<a href="{{ path('hard_delete_country', {'id': country.id}) }}" title="Supprimer">
+									<i class="fa-solid fa-trash" style="color: #f02000;"></i>
+								</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	{# -------------------------------------------------------------------------------------------------- #}
+
+	<div class="">
+		<div class="">
+			<h2 class="text-center">Tous les articles</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Titre</th>
+						<th>Description</th>
+						<th>Image</th>
+						<th>Créée le</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for article in articles %}
+						<tr class="text-center align-middle">
+							<td>{{ article.id }}</td>
+							<td>{{ article.title | length > 20 ? article.title[:20] ~ '...' : article.title }}</td>
+							<td>{{ article.content }}</td>
+							<td>
+								<div class="block_img_table">
+									<img src="{{ asset('uploads/' ~ article.image) }}" alt="{{ article.title }}">
+								</div>
+							</td>
+							<td>{{ article.createdAt | date('d/m/Y') }}</td>
+							<td>
+								<a href="{{ path('update_article', {'id': article.id}) }}" class="" title="Modifier">
+									<i class="fa-sharp fa-solid fa-pen-to-square" style="color: #3fb116;"></i>
+									Modifier
+								</a>
+								<a href="" class="" title="Supprimer">
+									<i class="fa-solid fa-trash" style="color: #f02000;"></i>
+								</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+	{# -------------------------------------------------------------------------------------------------- #}
+
+	 <div class="">
+		<div class="">
+			<h2 class="text-center">Tous les commentaires</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Auteur</th>
+						<th>Titre de l'Article</th>
+						<th>Contenu</th>
+						<th>Date de création</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for comment in comments %}
+						<tr>
+							<td>{{ comment.id }}</td>
+							<td>{{ comment.pseudo}}</td>
+							<td>{{ comment.article.title }}</td>
+							<td>{{ comment.content }}</td>
+							<td>{{ comment.createdAt | date('d/m/Y H:i:s') }}</td>
+							<td>
+								<a href="{{ path('comment_delete', {'id': comment.id}) }}">Supprimer</a>
+                                <i class="fa-solid fa-trash" style="color: #f02000;"></i>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div> 
+
+
+{% endblock %}

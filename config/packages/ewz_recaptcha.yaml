@@ -1,0 +1,4 @@
+# ewz_recaptcha:
+#     locale_key: fr # Remplacez par la langue de votre choix
+#     public_key: '%env(RECAPTCHA_PUBLIC_KEY)%'
+#     private_key: '%env(RECAPTCHA_PRIVATE_KEY)%'

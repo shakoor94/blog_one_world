@@ -1,0 +1,116 @@
+
+<div class="nav-top">
+	<ul>
+		<li>
+			<a href="{{ path('show_home') }}"><img class="single-logo" src="" alt=""></a>
+		</li>
+		<li id="burger">
+			<i class="fa-solid fa-bars"></i>
+		</li>
+	</ul>
+</div>
+
+<nav id="menu-navigation">
+	<ul class="logo">
+		<li>
+			<a href="{{ path('show_home') }}"><img id="logo" class="logo-one_world" src="{{ asset('images/logo-white-no-bg.png') }}" alt="logo-one_world"></a>
+		</li>
+		<li id="close-cross">
+			<i class="fa-solid fa-xmark"></i>
+		</li>
+	</ul>
+
+	<div class="menu_link">
+		<ul class="menu">
+			<li id="destination_down" class="lien">
+				Destinations
+				<i class="fa-sharp fa-solid fa-caret-down"></i>
+				<div class="sub_menu" style="background-image: url('{{ asset('images/earth.jpeg') }}');">
+					<ul class="">
+						<div>
+							<li class="afrique">AFRIQUE
+								<a href="{{ path('destination', {'id': 26}) }}">Maroc</a>
+							</li>
+						</div>
+						<div>
+							<li class="asie">ASIE ET MOYEN ORIENT
+								<a href="{{ path('destination', {'id': 27}) }}">Emirats Arabes Unis</a>
+								<a href="{{ path('destination', {'id': 31}) }}">Indonésie</a>
+							</li>
+						</div>
+						<div>
+							<li class="europe">EUROPE
+								<a href="{{ path('destination', {'id': 32}) }}">Allemagne</a>
+								<a href="{{ path('destination', {'id':33}) }}">Espagne</a>
+								<a href="{{ path('destination', {'id': 34}) }}">France</a>
+								<a href="{{ path('destination', {'id': 35}) }}">Italie</a>
+								<a href="{{ path('destination', {'id': 36}) }}">Malte</a>
+								<a href="{{ path('destination', {'id':37}) }}">Portugal</a>
+							</li>
+						</div>
+						<div>
+							<li class="amerique">AMERIQUE
+								<a href=""></a>
+							</li>
+						</div>
+					</ul>
+				</div>
+			</li>
+
+			<li class="lien">
+				<a href="" class="lien">Astuces & Préparatifs</a>
+			</li>
+			<li class="lien">
+				<a href=""class="lien">À propos</a>
+			</li>
+			{% if not app.user %}
+				<li class="lien">
+					<i class="fa-solid fa-user"></i>
+					<a href="{{ path('app_login') }}"class="lien">Connexion</a>
+				</li>
+
+			{% else %}
+				{% if is_granted('ROLE_ADMIN') %}
+					<li id="admin_down" class="lien">
+						Admin
+						<i class="fa-sharp fa-solid fa-caret-down"></i>
+						<div class="sub_menu_admin">
+							<ul>
+								<li>
+									<a class="" href="{{ path('show_dashboard') }}">Tableau de bord</a>
+								</li>
+								<li class="">
+									<a href="{{ path('create_country') }}">Ajouter une Destination</a>
+								</li>
+								<li class="">
+									<a href="{{ path('create_article') }}">Ajouter un article</a>
+								</li>
+
+							</ul>
+						</div>
+					</li>
+				{% endif %}
+				<li class="lien">
+					<a href="">{{ 'Bienvenue ' ~ app.user.pseudo}}</a>
+				</li>
+				<li class="lien">
+					<a href="{{ path('app_logout') }}"class="lien">Se déconnecter</a>
+				</li>
+			{% endif %}
+
+		</ul>
+	</div>
+
+</nav>
+
+<div class="social">
+	<a href="">
+		<i class="fa-brands fa-facebook"></i>
+	</a>
+	<a href="">
+		<i class="fa-brands fa-instagram"></i>
+	</a>
+	<a href="">
+		<i class="fa-brands fa-twitter"></i>
+	</a>
+</div>

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ country.title }}
+	- Détails du pays
+{% endblock %}
+
+{% block body %}
+	<header style="background-image: url('{{ asset('uploads/' ~ country.image) }}');">
+
+
+		<h1>{{ country.title }}</h1>
+
+	</header>
+	<main>
+
+
+		<!-- Ajoutez d'autres détails du pays ici -->
+
+		{# <img src="{{ asset('uploads/' ~ country.image) }}" alt="{{ country.title }}"> #}
+			<section id="description_country"> <h2>Déscription</h2>
+			<p>
+				{{ country.description }}
+			</p>
+		</section>
+
+
+		<h2>Articles correspondant à
+			{{ country.title }}</h2>
+		{% if country.articles is empty %}
+			<p>Aucun article trouvé pour ce pays.</p>
+		{% else %}
+
+
+			{% for article in country.articles %}
+				<section id="last_article">
+					<div class="container_card_article">
+						<div class="card_article"><img src="{{ asset('images/desert_dubai1.jpg') }}" alt="desertdubai"><div class="info">
+								<h3 class="titleImg">
+									{{ article.title }}<br>
+									<br></a>
+
+							</h3>
+							<a href="{{ path('article', {'id': 2}) }}" class="btn">En savoir plus</a>
+						</div>
+					</div>
+				</section>
+
+
+			{% endfor %}
+
+
+		{% endif %}
+
+
+	</main>
+{% endblock %}

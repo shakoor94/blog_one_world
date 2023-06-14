@@ -1,0 +1,352 @@
+/* ------------------------------- HEADER + NAV HOME ---------------*/
+
+/* -----------------balise NAV-----------------*/
+#menu-navigation {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    z-index: 100;
+    font-size: 1.125rem;
+
+}
+
+header nav{
+    
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around ;
+    align-items: center;
+  
+    position: fixed;
+    top: 0;
+}
+.logo {
+
+    width: 120px;
+    height: 80px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+header nav ul li {
+
+    padding: 0px 20px;
+    color: white;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.menu a {
+    font-size: 20px;
+    /* color: #0019A7; */
+    color: rgb(255, 255, 255);
+
+    text-decoration: none;
+}
+
+.dropdown {
+
+    color: black;
+}
+
+.logo-one_world {
+    width: 100px;
+}
+
+.single-logo,
+#burger i,
+#close-cross {
+    display: none;
+}
+
+li {
+    list-style: none;
+}
+
+.loginBtn {
+    background-color: #0019A7;
+    border-radius: 10px;
+    padding: 10px 15px;
+    border: none;
+    color: white;
+
+
+}
+
+.loginBtn i {
+    padding-right: 10px;
+}
+
+.loginBtn a {
+    color: white;
+    font-size: 15px;
+}
+
+.menu li {
+    display: inline-block;
+    padding-right: 20px;
+    color: white;
+}
+
+
+.social {
+    position: fixed;
+    right: 20px;
+    top: 200px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.627);
+    z-index: 500;
+}
+
+.social i {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+
+
+}
+
+.menu_link {
+    display: flex;
+    align-items: center;
+}
+
+  /*-------------------sub menu -------------*/
+  .sub_menu,
+.sub_menu_admin {
+    display: none;
+}
+.sub_menu {
+    display: none;
+    position: absolute;
+    left: 5%;
+    width: 60vw;
+    height: auto;
+    background-image: url(/public/images/earth.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 999;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sub_menu ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sub_menu li {
+    padding: 20px;
+    color: rgb(240, 175, 104);
+    padding: 5px 0;
+font-weight: bold;
+
+}
+
+.sub_menu a {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.sub_menu a:hover  {
+    color: #3e9fef;
+    /* text-decoration: underline; */
+}
+
+.sub_menu_admin {
+    background: white;
+    display: none;
+    position: absolute;
+    top: 70px;
+    z-index: 999;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.sub_menu_admin li:hover{
+    border-top: black 3px solid;
+    border-bottom: black 3px solid;
+}
+.sub_menu_admin li {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.sub_menu_admin a {
+    color: rgb(53, 53, 53);
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1100px) {
+    #menu-navigation.scrolled {
+        background-color: white;
+    }
+
+    .logo-mybodydate {
+        display: none;
+    }
+
+    .single-logo {
+        display: block;
+        width: 40px;
+        margin-left: 15px;
+    }
+
+    #burger i {
+        display: block;
+        font-size: 40px;
+        position: fixed;
+        top: 20px;
+        right: 25px;
+        color: #0019A7;
+    }
+
+    /* .winegap-header  #burger i {
+        color: #632797;
+    } */
+    .nav-top {
+        position: fixed;
+        /* width: 100%; */
+        top: 20px;
+        z-index: 1000;
+        list-style: none;
+    }
+
+    #burger {
+        font-size: 40px;
+        position: fixed;
+        top: 20px;
+        right: 25px;
+        display: flex;
+    }
+
+    #menu-navigation {
+        display: flex;
+        justify-content: flex-start;
+        position: fixed;
+        flex-direction: column;
+        left: -100%;
+        z-index: 99;
+        background: rgb(255, 255, 255);
+        border: #0019A7 solid 2px;
+        border-top-right-radius: 30px;
+        width: 90%;
+        height: 100vh;
+        margin-top: 50px;
+    }
+
+    .menu {
+        margin-top: 30px;
+        display: flex;
+        max-height: 100vh;
+    }
+
+    .menu li a {
+        font-size: 25px;
+        line-height: 50px;
+    }
+
+    #close-cross {
+        display: block;
+        position: absolute;
+        right: 2px;
+        top: 1px;
+        color: #0019A7;
+        font-size: 40px;
+        padding: 0;
+    }
+
+    #container-download img {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    #menu-navigation ul {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+    }
+
+    #menu-navigation ul li {
+        text-align: center;
+        margin: 10px;
+    }
+
+    #menu-navigation.deploye {
+        left: 0;
+    }
+
+    #menu-navigation.transition {
+        transition: 0.5s;
+    }
+
+    .sub-menu {
+        width: 80%;
+        max-height: 100vh;
+
+    }
+
+    .sub-menu-ul {
+        background-color: rgb(255, 255, 255, 0.9);
+        max-width: 90%;
+
+    }
+
+    .sub-menu li a {
+        line-height: 1px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #0019A7;
+    }
+
+    .loginBtn {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .loginBtn a {
+        font-size: 20px;
+    }
+
+    .loginBtn i {
+        padding-right: 10px;
+    }
+}

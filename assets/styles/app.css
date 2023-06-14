@@ -1,0 +1,19 @@
+@import url(/assets/styles/components/home.css);
+@import url(/assets/styles/components/nav.css);
+@import url(/assets/styles/components/header.css);
+@import url(/assets/styles/components/form.css);
+@import url(/assets/styles/components/destination.css);
+@import url(/assets/styles/components/footer.css);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.flash-error-message {
+    color: red;
+    /* Ajoutez d'autres styles CSS si nécessaire */
+  }

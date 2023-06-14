@@ -1,0 +1,54 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+create_Country:
+    path: /admin/ajouter-un-pays
+    controller: App\Controller\CountryController::createCountry
+    methods: [GET, POST]
+
+show_country:
+    path: /pays/{id}
+    controller: 'App\Controller\DestinationShowController::countryShow'
+    methods: GET
+
+save_countries:
+    path: /enregistrer-pays
+    controller: App\Controller\CountryController::saveCountries
+    
+show_destination:
+    path: /destination
+    controller: App\Controller\DestinationShowController::showDestination
+    methods: [GET]
+
+destination:
+    path: /destination/{id}
+    controller: 'App\Controller\DestinationShowController::destination'
+    methods: GET
+
+show_article:
+    path: /articles
+    controller: App\Controller\ArticleDetailsController::article
+    methods: [GET]
+
+article:
+    path: /articles/{id}
+    controller: App\Controller\ArticleDetailsController::article
+    methods: [GET, POST] 
+
+comment_dashboard:
+    path: /comment/dashboard
+    controller: 'App\Controller\CommentController::dashboard'
+    methods: GET
+
+comment_delete:
+    path: /comment/delete/{id}
+    controller: 'App\Controller\CommentController::delete'
+    methods: GET
+
+article_list:
+    path: /articles
+    controller: App\Controller\ArticleController::list
+    methods: [GET]

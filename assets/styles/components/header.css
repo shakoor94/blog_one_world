@@ -1,0 +1,25 @@
+
+header{
+    padding-top: 30px;
+    width: 100vw;
+    height: 90vh;
+    position: relative;
+     background-image:url(/public/images/pepite.jpg) ; 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre pour améliorer la lisibilité */
+    filter: brightness(0.8) contrast(1.2); /* Réglages de luminosité et de contraste */
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+
+
+h1{
+    font-size: 3.5rem;
+    text-align: center;
+}

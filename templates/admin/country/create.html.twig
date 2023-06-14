@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une Déstination
+{% endblock %}
+
+{% block body %}
+
+    {% if category is not defined  %}
+        <h1 class="text-center my-3">Ajouter une destination</h1>
+    {% else %}
+        <h1 class="text-center my-3">Modifier la destination {{ country.title }}</h1>
+    {% endif %}
+
+    <div class="country-form ">
+        <div class="col-4 mx-auto">
+
+            {{ form(form) }}
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,150 @@
+
+
+
+.block_form{
+    background-color: rgba(255, 255, 255, 0.222);
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh; 
+}
+.block_form form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius:15px ;
+    /* box-shadow:  0 0 10px rgba(0, 0, 0, alpha); */
+    width: 500px;
+    
+    
+    
+}
+.block_form form h4{
+    text-align: center;
+    font-size: 2rem;
+    
+}
+.block_form form input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 35px;
+    border-radius: 15px;
+    border: 0px;
+    padding: 0 9px;
+    border: 2px solid black;
+    font-size: 16px;
+    
+}
+.block_form label{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.block_form hr{
+    margin-top:10px ;
+    margin-bottom:10px ;
+       
+}
+.block_form p{
+    text-align: center;
+    font-size: 1.100rem;
+}
+
+
+.btn_login{
+    width: 200px;
+    display: block;
+    margin: auto;
+}
+.btn_login:hover{
+    background-color: rgb(26, 94, 241);
+    color: white;
+}
+.title_dashboard{
+    margin-top: 200px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #747272;
+  }
+  
+  table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  table td img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  table td a {
+    color: #000;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+/****************** Tableau view dashbbord -------------------*/
+h1 {
+    margin-top: 20px; /* Ajustez la marge supérieure selon vos besoins */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table td .block_img_table img {
+    max-width: 300px;
+    height: auto;
+}
+
+table td a {
+    color: #000;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+table td a:hover {
+    color: #999;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.my-3 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.my-4 {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+/* .content{
+    flex-grow: 1;
+}
+.img-custom{
+    object-fit: contain;
+  } */

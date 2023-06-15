@@ -88,3 +88,29 @@ window.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+function isInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.bottom <= window.innerHeight
+    );
+}
+
+function handleScroll() {
+    let sections = document.querySelectorAll('.section-animation');
+
+    sections.forEach(function(section) {
+        if (isInViewport(section)) {
+            section.classList.add('animate');
+        } else {
+            section.classList.remove('animate');
+        }
+    });
+}
+
+window.addEventListener('scroll', handleScroll);
+
+
+
+
+

@@ -30,7 +30,8 @@ services:
     App\Controller\CountryController:
         arguments:
             $uploadsDirectory: '%uploads_directory%'
-            
+        autowire: true
+
     App\Controller\ArticleDetailsController:
         autowire: true
 

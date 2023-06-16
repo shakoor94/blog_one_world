@@ -6,6 +6,7 @@ use App\Entity\Country;
 use App\Form\CountryFormType;
 use App\Repository\CountryRepository;
 use DateTime;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,10 +18,12 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 #[Route('/admin')]
 class CountryController extends AbstractController
 {
+    private $entityManager;
     private $uploadsDirectory;
 
-    public function __construct(string $uploadsDirectory)
+    public function __construct(EntityManagerInterface $entityManager, string $uploadsDirectory)
     {
+        $this->entityManager = $entityManager;
         $this->uploadsDirectory = $uploadsDirectory;
     }
 
@@ -43,13 +46,11 @@ class CountryController extends AbstractController
                 $this->handleFile($photo, $country, $slugger);
             }
 
-            // Save the country (implement your own save logic here)
+            $this->entityManager->persist($country);
+            $this->entityManager->flush();
 
-            // Récupérer le titre du pays
             $title = $country->getTitle();
-
-            // Récupérer tous les pays
-            $countries = []; // Implement your own logic to get all countries
+            $countries = [];
 
             return $this->redirectToRoute('show_destination', [
                 'id' => $country->getId(),
@@ -81,7 +82,7 @@ class CountryController extends AbstractController
                 $country->setImage($country->getImage());
             }
 
-            // Save the country (implement your own save logic here)
+            $this->entityManager->flush();
 
             $this->addFlash('success', "La modification a bien été faite");
             return $this->redirectToRoute('show_dashboard');
@@ -90,7 +91,7 @@ class CountryController extends AbstractController
         return $this->render('admin/country/create.html.twig', [
             'form' => $form->createView(),
             'country' => $country,
-            'countries' => [], // Implement your own logic to get all countries
+            'countries' => [],
         ]);
     }
 
@@ -107,15 +108,16 @@ class CountryController extends AbstractController
             ['title' => 'Italie'],
             ['title' => 'Malte'],
             ['title' => 'Portugal'],
-
-            // Ajoutez d'autres pays ici
         ];
 
         foreach ($countryData as $data) {
-            $title = $data['title'];
+            $country = new Country();
+            $country->setTitle($data['title']);
 
-            // Save each country (implement your own save logic here)
+            $this->entityManager->persist($country);
         }
+
+        $this->entityManager->flush();
 
         return new Response('Les pays ont été enregistrés dans la base de données.');
     }
@@ -123,7 +125,8 @@ class CountryController extends AbstractController
     #[Route('/supprimer-une-destination/{id}', name: 'hard_delete_country', methods: ['GET'])]
     public function hardDeleteCountry(Country $country, CountryRepository $repository): Response
     {
-        // Remove the country (implement your own logic here)
+        $this->entityManager->remove($country);
+        $this->entityManager->flush();
 
         $this->addFlash('success', "La destination a été supprimée définitivement");
         return $this->redirectToRoute('show_dashboard');

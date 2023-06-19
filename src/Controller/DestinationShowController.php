@@ -23,8 +23,12 @@ class DestinationShowController extends AbstractController
     #[Route('/destination/{id}', name: 'destination')]
     public function destination(Country $country): Response
     {
+        // Récupération de tous les articles correspondant au pays
+        $articles = $country->getArticles();
+    
         return $this->render('destination/destination.html.twig', [
             'country' => $country,
+            'articles' => $articles,
         ]);
     }
-}
+}    

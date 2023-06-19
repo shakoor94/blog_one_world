@@ -27,29 +27,25 @@
 
 		<h2>Articles correspondant à
 			{{ country.title }}</h2>
-		{% if country.articles is empty %}
+		{% if articles is empty %}
 			<p>Aucun article trouvé pour ce pays.</p>
 		{% else %}
-
-
-			{% for article in country.articles %}
+			{% for article in articles %}
 				<section id="last_article">
 					<div class="container_card_article">
-						<div class="card_article"><img src="{{ asset('images/desert_dubai1.jpg') }}" alt="desertdubai"><div class="info">
+						<div class="card_article">
+							<img src="{{ asset('uploads/' ~ article.image) }}" alt="{{ article.title }}">
+							<div class="info">
 								<h3 class="titleImg">
 									{{ article.title }}<br>
-									<br></a>
-
-							</h3>
-							<a href="{{ path('article', {'id': 2}) }}" class="btn">En savoir plus</a>
+									<br>
+								</h3>
+								<a href="{{ path('article', {'id': article.id}) }}" class="btn">En savoir plus</a>
+							</div>
 						</div>
 					</div>
 				</section>
-
-
 			{% endfor %}
-
-
 		{% endif %}
 
 

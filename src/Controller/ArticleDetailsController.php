@@ -15,14 +15,16 @@ use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 class ArticleDetailsController extends AbstractController
 {
     private $authorizationChecker;
+    private $entityManager;
 
-    public function __construct(AuthorizationCheckerInterface $authorizationChecker)
+    public function __construct(AuthorizationCheckerInterface $authorizationChecker, EntityManagerInterface $entityManager)
     {
         $this->authorizationChecker = $authorizationChecker;
+        $this->entityManager = $entityManager;
     }
 
     #[Route('/articles/{id}', name: 'article')]
-    public function article(Article $article, Request $request, EntityManagerInterface $entityManager): Response
+    public function article(Article $article, Request $request): Response
     {
         // Création d'une nouvelle instance de Comment
         $comment = new Comment();
@@ -51,21 +53,20 @@ class ArticleDetailsController extends AbstractController
             }
 
             // Enregistrement du commentaire en base de données
-            $entityManager->persist($comment);
-            $entityManager->flush();
+            $this->entityManager->persist($comment);
+            $this->entityManager->flush();
 
             // Redirection vers la page des détails de l'article
             return $this->redirectToRoute('article', ['id' => $article->getId()]);
         }
-        
-        // Récupération ou définition de la variable $country
+
+        // Récupération de l'article correspondant au pays
         $country = $article->getCountry();
-        
-        // Affichage du formulaire et des commentaires associés à l'article
+
         return $this->render('article_details/article_details.html.twig', [
+            'country' => $country,
             'article' => $article,
             'form' => $form->createView(),
-            'country' => $country
         ]);
     }
 }

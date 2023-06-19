@@ -70,7 +70,16 @@ class ArticleController extends AbstractController
             'articles' => $repository->findAll(),
         ]);
     }
-
+    #[Route('/supprimer-un-article/{id}', name: 'hard_delete_article', methods: ['GET'])]
+    public function hardDeleteCountry(Article $article, ArticleRepository $repository, EntityManagerInterface $entityManager): Response
+    {
+        $entityManager->remove($article);
+        $entityManager->flush();
+    
+        $this->addFlash('success', "L'article a été supprimé définitivement");
+        return $this->redirectToRoute('show_dashboard');
+    }
+    
     private function handleFile(UploadedFile $photo, Article $article, SluggerInterface $slugger)
     {
         $extension = '.' . $photo->guessExtension();

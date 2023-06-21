@@ -8,15 +8,16 @@
     background-color: rgb(88, 151, 188);
     color: #000000;
     padding: 50px 0;
+ 
 
 }
    
   
   footer .logo_original_footer{
-    width: 200px;
-    height: 200px;
-    display: block;
-    margin: auto;
+    width: 150px;
+    height: 150px;
+    margin-left: 5%;
+
   }
   .footer-social i {
     color: black;
@@ -34,13 +35,13 @@
 
 
   .footer-content {
-    width:85vw;
-    margin: auto ;
+    width:60%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-bottom: 50px;
-    border-bottom: solid black 1px;
+    justify-content: space-between;
+    align-items: center;
+
+  
   }
   
   .footer-content li {
@@ -66,6 +67,7 @@
     margin: auto ;
     display: block;
     flex-wrap: wrap;
+    border-top: solid black 1px;
   }
   .footer-menu ul {
     list-style: none;

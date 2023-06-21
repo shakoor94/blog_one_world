@@ -1,108 +1,229 @@
+.bg-log {
+    background-image: url(/public/images/bg-login.jpeg);
+    background-size: cover;
+    background-position: center;
+}
 
+.bg-register {
+    background-image: url(/public/images/bg-register.jpeg);
+    background-size: cover;
+    background-position: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Ombre pour améliorer la lisibilité */
+    filter: brightness(0.8) contrast(1.2);
+    /* Réglages de luminosité et de contraste */
+}
 
+.formular {
+    color: white;
+}
 
-.block_form{
-    background-color: rgba(255, 255, 255, 0.222);
-   
+.block_form {
+    padding-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh; 
+    height: 100vh;
+
 }
-.block_form form{
-    background-color: white;
+
+.block_form form {
+    
+    background-color: rgba(0, 0, 0, 0.121);
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centrer les éléments horizontalement */
+    justify-content: center; /* Centrer les éléments verticalement */
     padding: 30px;
-    border-radius:15px ;
+    border-radius: 15px;
     /* box-shadow:  0 0 10px rgba(0, 0, 0, alpha); */
     width: 500px;
-    
-    
-    
+
 }
-.block_form form h4{
+
+.block_form form h3 {
     text-align: center;
     font-size: 2rem;
-    
+
 }
-.block_form form input{
+
+.block_form form input {
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     height: 35px;
     border-radius: 15px;
     border: 0px;
     padding: 0 9px;
     border: 2px solid black;
     font-size: 16px;
-    
+
 }
-.block_form label{
+
+.block_form label {
     font-weight: bold;
     font-size: 1.3rem;
 }
-.block_form hr{
-    margin-top:10px ;
-    margin-bottom:10px ;
-       
+
+.block-input {
+    display: flex;
+    flex-direction: column;
 }
-.block_form p{
+
+.block_form hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.block_form p {
     text-align: center;
     font-size: 1.100rem;
+ 
 }
 
+.block_form input {
+    
+    cursor: pointer;
+}
+.noaccount{
+    margin-top: 15px;
+}
+.noaccount a {
+    background-color: white;
+    border: 2px solid rgb(26, 94, 241);
+    color:rgb(26, 94, 241);
+    padding: 6px;
+    border-radius: 10px;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+.noaccount a:hover{
+    background-color: rgb(26, 94, 241);
+    color: white;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+  }
+.groupform {
+    background-color: #000000aa;
+}
 
-.btn_login{
+.btn_login, .btn_register {
     width: 200px;
     display: block;
     margin: auto;
-}
-.btn_login:hover{
+    cursor: pointer;
     background-color: rgb(26, 94, 241);
     color: white;
 }
-.title_dashboard{
+.form-group-terms{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+  }
+
+/* .btn_login:hover {
+    background-color: rgb(26, 94, 241);
+    color: white;
+}
+.btn_register:hover {
+    background-color: rgb(26, 94, 241);
+    color: white;
+} */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin: auto;
+  }
+  
+
+  .block-input {
+    margin-bottom: 10px;
+  }
+  
+  .block_form label {
+    display: block;
+    margin: auto;
+    margin-bottom: 5px;
+  }
+  
+  .block_form input[type="text"],
+  .block_form  input[type="email"],
+  .block_form input[type="password"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  
+  /* .block_form input[type="submit"] {
+    margin-top: 50px;
+  } */
+  
+  .groupform {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.groupform1, .groupform2{
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+
+/****************** Tableau view dashbbord -------------------*/
+
+
+.title_dashboard {
     margin-top: 200px;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
     background-color: #747272;
-  }
-  
-  table th, table td {
+}
+
+table th,
+table td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
-  }
-  
-  table th {
+}
+
+table th {
     background-color: #f2f2f2;
     font-weight: bold;
-  }
-  
-  table td img {
+}
+
+table td img {
     max-width: 100px;
     height: auto;
-  }
-  
-  table td a {
+}
+
+table td a {
     color: #000;
     margin-right: 10px;
     text-decoration: none;
-  }
-  
-/****************** Tableau view dashbbord -------------------*/
-h1 {
-    margin-top: 20px; /* Ajustez la marge supérieure selon vos besoins */
 }
+
+
+h1 {
+    margin-top: 20px;
+    /* Ajustez la marge supérieure selon vos besoins */
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
-table th, table td {
+table th,
+table td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;

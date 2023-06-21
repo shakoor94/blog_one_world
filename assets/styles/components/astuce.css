@@ -3,6 +3,10 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Ombre pour améliorer la lisibilité */
+    filter: brightness(0.8) contrast(1.2);
+    /* Réglages de luminosité et de contraste */
 }
 
 .section-animation {

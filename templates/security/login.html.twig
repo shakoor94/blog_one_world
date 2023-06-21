@@ -1,27 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!
-{% endblock %}
+{% block title %}Log in!{% endblock %}
 
 {% block body %}
-
-
-
+<section class="bg-log" style="background-image: url('{{ asset('images/bg-login.jpeg') }}');">
 	<div class="block_form">
 		<div class="formular">
-			<form method="post" >
-            	{% if error %}
-				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-			{% endif %}
-{% include 'include/_flashes.html.twig' %}
-			{% if app.user %}
-				<div class="mb-3">
-					You are logged in as
-					{{ app.user.userIdentifier }},
-					<a href="{{ path('app_logout') }}">Logout</a>
-				</div>
-			{% endif %}
-				<h4>Connectez-vous</h4>
+			<form method="post">
+				{% if error %}
+					<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+				{% endif %}
+				{% include 'include/_flashes.html.twig' %}
+				{% if app.user %}
+					<div class="mb-3">
+						You are logged in as {{ app.user.userIdentifier }},
+						<a href="{{ path('app_logout') }}">Logout</a>
+					</div>
+				{% endif %}
+				<h3>Connectez-vous</h3>
 				<hr>
 
 				<label for="inputEmail">Email</label>
@@ -30,14 +26,12 @@
 				<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 				<input class="btn_login" type="submit" value="Connexion">
-				<p>
+				<p class="noaccount">
 					Vous n'avez pas de compte ?
-					<a href="{{ path('register') }}">inscrivez vous</a>
+					<a href="{{ path('register') }}">Inscrivez-vous</a>
 				</p>
-
-
 			</form>
 		</div>
-
 	</div>
+</section>
 {% endblock %}

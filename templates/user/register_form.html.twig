@@ -4,22 +4,66 @@
 {% endblock %}
 
 {% block body %}
-	<h1 class="">Inscrivez-vous !</h1>
 
-	<div class="block_form">
-		<div class="">
+    <section class="bg-register" style="background-image: url('{{ asset('images/bg-register.jpeg') }}');">
 
-			{{form_start(form)}}
+        <div class="block_form">
+            <div class="groupform">
+                <div class="formular">
+                    <form method="post">
+                        <h3 class="">Inscrivez-vous !</h3>
+                        <hr>
+                        {{ form_start(form) }}
 
-			<div class="">{{form_row(form.firstname)}}</div>
-			<div class="">{{form_row(form.lastname)}}</div>
-
-			{{form_row(form.pseudo)}}
-			<div class="">{{form_row(form.email)}}</div>
-			<div class="">{{form_row(form.password)}}</div>
-
-
-			{{form_end(form)}}
-		</div>
-	</div>
+                        <div class="groupform1">
+                            <div class="block-input">
+                                {{ form_row(form.firstname) }}
+                                {% if form_errors(form.firstname) %}
+                                    <div class="error">
+                                        {{ form_errors(form.firstname) }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="block-input">
+                                {{ form_row(form.lastname) }}
+                                {% if form_errors(form.lastname) %}
+                                    <div class="error">
+                                        {{ form_errors(form.lastname) }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="groupform2">
+                            <div class="block-input">
+                                {{ form_row(form.pseudo) }}
+                                {% if form_errors(form.pseudo) %}
+                                    <div class="error">
+                                        {{ form_errors(form.pseudo) }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <div class="block-input">
+                                {{ form_row(form.email) }}
+                                {% if form_errors(form.email) %}
+                                    <div class="error">
+                                        {{ form_errors(form.email) }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="block-input">
+                            {{ form_row(form.password) }}
+                            {% if form_errors(form.password) %}
+                                <div class="error">
+                                    {{ form_errors(form.password) }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        <input class="btn_register" type="submit" value="Inscription">
+                        {{ form_end(form) }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

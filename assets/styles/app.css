@@ -5,6 +5,7 @@
 @import url(/assets/styles/components/destination.css);
 @import url(/assets/styles/components/footer.css);
 @import url(/assets/styles/components/astuce.css);
+@import url(/assets/styles/components/articles.css);
 *{
     margin: 0;
     padding: 0;
@@ -30,4 +31,38 @@ body{
   
 .content {
     flex-grow:1;
+}
+.error {
+  color: red;
+  /* Autres styles personnalisés pour les messages d'erreur */
+}
+
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  /* Ajoutez ici d'autres styles personnalisés pour les flashes */
+}
+
+.alert-success {
+  background-color: #15f115d0;
+  color: #FFFFFF;
+}
+
+.alert-warning {
+  background-color: #FFA500;
+  color: #FFFFFF;
+}
+
+.alert-error {
+  background-color: #FF0000;
+  color: #FFFFFF;
+}
+
+.alert-inner-icon {
+  /* Styles pour l'icône */
+}
+
+.alert-inner--text {
+  /* Styles pour le texte du flash */
 }

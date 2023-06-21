@@ -8,17 +8,21 @@
     <h2>{{ article.title }}</h2>
     <p>{{ article.content }}</p>
 
-    <h2>Commentaires</h2>
-    {% for comment in article.comments %}
-        <div>
-            <p>Par {{ comment.getPseudo }} le {{ comment.createdAt|date('d/m/Y H:i') }}</p>
-            <p>{{ comment.content }}</p>
-        </div>
-    {% endfor %}
+    <div class="comment-section">
+        <h2>Commentaires</h2>
+        {% for comment in article.comments %}
+            <div class="comment">
+                <p class="author">Par {{ comment.getPseudo }} le {{ comment.createdAt|date('d/m/Y H:i') }}</p>
+                <p class="content">{{ comment.content }}</p>
+            </div>
+        {% endfor %}
 
-    <h2>Laisser un commentaire</h2>
-    {{ form_start(form) }}
-    {{ form_row(form.content) }}
-    {{ form_row(form.submit) }}
-    {{ form_end(form) }}
+        <div class="comment-form">
+            <h2>Laisser un commentaire</h2>
+            {{ form_start(form) }}
+            {{ form_row(form.content) }}
+            {{ form_row(form.submit) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}

@@ -96,19 +96,19 @@ function isInViewport(element) {
     );
 }
 
-function handleScroll() {
-    let sections = document.querySelectorAll('.section-animation');
+// function handleScroll() {
+//     let sections = document.querySelectorAll('.section-animation');
 
-    sections.forEach(function(section) {
-        if (isInViewport(section)) {
-            section.classList.add('animate');
-        } else {
-            section.classList.remove('animate');
-        }
-    });
-}
+//     sections.forEach(function(section) {
+//         if (isInViewport(section)) {
+//             section.classList.add('animate');
+//         } else {
+//             section.classList.remove('animate');
+//         }
+//     });
+// }
 
-window.addEventListener('scroll', handleScroll);
+// window.addEventListener('scroll', handleScroll);
 
 
 

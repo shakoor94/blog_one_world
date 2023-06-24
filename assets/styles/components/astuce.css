@@ -8,7 +8,7 @@
     filter: brightness(0.8) contrast(1.2);
     /* Réglages de luminosité et de contraste */
 }
-
+/* 
 .section-animation {
     opacity: 0;
     transform: translateY(50px);
@@ -18,5 +18,5 @@
 .section-animation.animate {
     opacity: 1;
     transform: none;
-}
+} */
 

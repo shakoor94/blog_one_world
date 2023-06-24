@@ -52,3 +52,17 @@ article_list:
     path: /articles
     controller: App\Controller\ArticleController::list
     methods: [GET]
+
+astuces_preparatifs:
+    path: /astuces-preparatifs
+    controller: 'App\Controller\AstuceController::index'
+    methods: GET
+
+a_propos: 
+    path: /a_propos
+    controller: 'App\Controller\AproposController::index'
+    methods: GET
+
+contact_form:
+    path: /contact
+    controller: App\Controller\ContactController::submitContactForm

@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AproposController!
+{% endblock %}
+
+{% block body %}
+	<header class="header_aprpos" style="background-image: url('{{ asset('images/headerpropos.jpg') }}');">
+
+
+		<h1>One world
+		</h1>
+
+	</header>
+
+
+	<section id="container-general">
+		<div class="presentation">
+			<div class="container-presentation">
+
+				<div class="presentation-text">
+					<h2 class="titleh2">Pourquoi One World ?
+					</h2>
+					<p class="text">One World est l'endroit où vous pouvez découvrir mes aventures et expériences vécues lors de mes voyages. C'est une plateforme qui me tient à cœur car elle me permet de partager mes voyages, mes découvertes et mes expériences uniques.
+
+
+					</p>
+
+					<p class="text">
+						J'ai créé One World avec l'intention de créer un espace ouvert où vous pouvez non seulement lire mes récits de voyage, mais aussi partager vos propres avis et expériences.
+					</p>
+
+					<p class="text">Que vous ayez déjà visité les destinations dont je parle ou que vous rêviez simplement de les découvrir, je vous invite à participer en partageant vos commentaires, vos recommandations et vos propres expériences. Votre contribution est inestimable pour créer une communauté de voyageurs passionnés qui s'entraident et s'inspirent mutuellement.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="container-general">
+		<div id="blocwho">
+			<div class="container-presentation">
+
+				<div  class="presentation-text">
+					<h2 class="titleh2">Qui-suis-je?
+					</h2>
+					<p class="text">Je m'appelle Shakoor et je suis passionné de voyage. Bien que j'ai commencé à voyager tardivement en raison des contraintes budgétaires et des responsabilités professionnelles et familiales, j'ai réussi à concrétiser ma passion. Chaque année, je m'efforce de partir vers une nouvelle destination dans le monde.
+					</p>
+
+					<p class="text">
+						Mon objectif principal en voyageant est de m'évader de la routine parisienne. Je trouve un profond bonheur à decouvrir d'autres choses, à sortir de ma zone de confort et à m'imprégner de nouvelles cultures et traditions.
+					</p>
+
+					<p class="text">À travers ce site, je souhaite partager mes expériences de voyage, mes réflexions et mes conseils pratiques. Je veux inspirer des personnes ayant une situation similaire à la mienne  à franchir le pas, à explorer le monde et à vivre des moments inoubliables. Je suis convaincu que chaque voyageur a une histoire unique à raconter, et j'espère créer une communauté où nous pouvons tous nous enrichir mutuellement.</p>
+				</div>
+			</div>
+		</div>
+		<div class="blockimg">
+			<img src="{{ asset('images/meonboat.JPG') }}" alt="meonboat">
+
+		</div>
+	</section>
+
+
+	<!-- Ajout du formulaire de contact -->
+	<section id="container-general">
+		<div class="presentation">
+			<div class="container-presentation">
+				<div class="presentation-text">
+					<h2 class="titleh2">Formulaire de contact</h2>
+					{# {% if app.flashes('warning') is not empty %}
+					                    <div class="alert alert-warning">
+					                        {{ app.flashes('warning')[0] }}
+					                    </div>
+					                {% endif %}
+					                {% if app.flashes('success') is not empty %}
+					                    <div class="alert alert-success">
+					                        {{ app.flashes('success')[0] }}
+					                    </div>
+					                {% endif %} #}
+					<form class="contact-form" method="POST" >
+						{{ form_start(form) }}
+						{{ form_row(form.name) }}
+						{{ form_row(form.email) }}
+						{{ form_row(form.message) }}
+						{{ form_row(form.submit) }}
+						{{ form_end(form) }}
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+{% endblock %}

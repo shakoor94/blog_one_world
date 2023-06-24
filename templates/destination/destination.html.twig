@@ -25,10 +25,10 @@
 		</section>
 
 
-		<h2>Articles correspondant à
-			{{ country.title }}</h2>
+		<h2> Derniers articles </h2> 
+			{# {{ country.title }}#}
 		{% if articles is empty %}
-			<p>Aucun article trouvé pour ce pays.</p>
+			<h3>Aucun article trouvé pour cette destination.</h3>
 		{% else %}
 			{% for article in articles %}
 				<section id="last_article">

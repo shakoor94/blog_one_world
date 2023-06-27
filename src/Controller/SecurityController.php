@@ -20,7 +20,7 @@ class SecurityController extends AbstractController
         $lastUsername = $authenticationUtils->getLastUsername();
 
         if ($error) {
-            $this->addFlash('error', 'Votre identifiant ou votre mot de passe sont inconrrects.');
+            $this->addFlash('error', 'Votre identifiant ou votre mot de passe sont incorrects.');
         }
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }

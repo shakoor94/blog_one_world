@@ -1,22 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter un Article
-{% endblock %}
+{% block title %}Ajouter un Article{% endblock %}
 
 {% block body %}
-
+<nav class='navbg'>
+  <!-- Votre navigation -->
+</nav>
+<div class="container">
+  <div class="header">
     {% if category is not defined  %}
-        <h1 class="text-center my-3">Ajouter un article</h1>
+      <h1 class="title">Ajouter un article</h1>
     {% else %}
-        <h1 class="text-center my-3">Modifier l'article {{ article.title }}</h1>
+      <h1 class="title">Modifier l'article {{ article.title }}</h1>
     {% endif %}
+  </div>
 
-    <div class="country-form ">
-        <div class="col-4 mx-auto">
-
-            {{ form(form) }}
-
-        </div>
+  <div class="form-container">
+    <div class="form-wrapper">
+      {{ form_start(form) }}
+      <div class="form-group">
+        {{ form_label(form.title) }}
+        {{ form_widget(form.title) }}
+      </div>
+      <div class="form-group">
+        {{ form_label(form.content) }}
+        {{ form_widget(form.content) }}
+      </div>
+      <div class="form-group">
+        {{ form_label(form.image) }}
+        {{ form_widget(form.image) }}
+      </div>
+      <div class="form-group">
+        {{ form_label(form.country) }}
+        {{ form_widget(form.country) }}
+      </div>
+      <div class="form-group">
+        {{ form_widget(form.submit, { 'attr': {'class': 'submit-button'} }) }}
+      </div>
+      {{ form_end(form) }}
     </div>
+  </div>
+</div>
 
 {% endblock %}

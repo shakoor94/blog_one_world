@@ -18,6 +18,13 @@ class CountryFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+           
+            ->add('title', TextType::class, [
+                'label' => 'Titre',
+            ])
+            ->add('description', TextareaType::class, [
+                'label' => 'Description',
+            ])
             ->add('image', FileType::class, [
                 'data_class' => null,
                  'required' => false,
@@ -39,12 +46,6 @@ class CountryFormType extends AbstractType
                         'minHeightMessage' => 'La hauteur de l\'image doit être d\'au moins 200 pixels.',
                     ]),
                 ],
-            ])
-            ->add('title', TextType::class, [
-                'label' => 'Titre',
-            ])
-            ->add('description', TextareaType::class, [
-                'label' => 'Description',
             ])
             ->add('submit', SubmitType::class, [
                 'label' => ($options['country']) ? "Modifier " . $options['country']->getTitle() : "Ajouter",

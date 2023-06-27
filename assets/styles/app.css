@@ -73,3 +73,13 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+.valid,.alert-inner--icon{
+  background-color: #15f115d0;
+  color: #FFFFFF;
+  padding: 10px;
+}
+.navbg{
+  background-color: rgb(4,44,98);
+  height: 100px;
+}

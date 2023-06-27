@@ -3,7 +3,7 @@
         {% for label, messages in app.flashes %}
             {% for message in messages %}
                 <div role="alert" class="alert alert-dismissible fade show alert-{{ label }}">
-                    {% if label is same as 'success' %}
+                    {% if label is same as '' %}
                         <span class="alert-inner--icon">
                             <i class="fa fa-thumbs-up"></i>
                         </span>

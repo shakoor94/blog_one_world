@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    {% block stylesheets %}
-        {{ encore_entry_link_tags('app') }}
-    {% endblock %}
-</head>
-<body>
-    {% include 'include/_nav.html.twig' %}
-    <div class="content">
-        {% block body %}{% endblock %}
-    </div>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="One World est un blog de voyage dédié à l'exploration et à la découverte du monde. Retrouvez des récits, conseils et inspirations pour planifier vos prochaines aventures.">
+		<meta name="keywords" content="voyage, blog de voyage, explorations, aventures, conseils et astices de voyage, destinations,pays">
+		<meta name="author" content="Shakoor FIDA">
+		<title>One World - Le blog de voyage fait pour vous</title>
+		<title>
+			{% block title %}ONE WORLD : Le Blog de voyage fait pour vous
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+	</head>
+	<body>
+		{% include 'include/_nav.html.twig' %}
+		<div class="content"> {% block body %}{% endblock %}
+			</div>
 
 
-     {% include 'include/_footer.html.twig' %}
-    {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
-    {% endblock %}
-</body>
-</html>
+			{% include 'include/_footer.html.twig' %}
+			{% block javascripts %}
+				{{ encore_entry_script_tags('app') }}
+			{% endblock %}
+		</body>
+	</html>

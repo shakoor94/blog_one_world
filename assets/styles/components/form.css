@@ -177,8 +177,9 @@
 
 
 /****************** Tableau view dashbbord -------------------*/
-
-
+.container_table{
+    margin-bottom: 80px;
+}
 .title_dashboard {
     margin-top: 200px;
 }
@@ -186,7 +187,8 @@
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: #747272;
+    background-color: rgb(4,44,98);
+    color: white;
 }
 
 table th,
@@ -231,8 +233,8 @@ table td {
 }
 
 table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+    background-color: rgb(239,184,44);
+    color: white;
 }
 
 table td .block_img_table img {
@@ -326,3 +328,151 @@ form.contact-form {
     margin-top: 10px;
   }
   
+/*-------------------FORM CREATE---------------*/
+.containerform {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.headerform {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 24px;
+    color: #333;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Style du formulaire généré par Symfony */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.countryform label {
+    margin-bottom: 20px;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/*---------------------------------------*/
+
+.containerform {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.headerform {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  color: #333;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  height: 150px; /* Ajustez la hauteur selon vos besoins */
+}
+
+
+
+.form-group input[type="file"] {
+  /* Styles spécifiques pour le champ de type fichier */
+}
+
+.form-group .submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.navbg {
+  /* Styles pour votre navigation */
+}
+
+/* Autres styles CSS pour votre page */

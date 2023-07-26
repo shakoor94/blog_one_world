@@ -3,7 +3,13 @@
     background-size: cover;
     background-position: center;
 }
-
+.block_condition_form{
+  width: 90%;
+  padding: 30px;
+}
+.block_condition_form a{
+color: #0056b3;
+}
 .bg-register {
     background-image: url(/public/images/bg-register.jpeg);
     background-size: cover;
@@ -24,7 +30,7 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 
 }
 
@@ -38,7 +44,7 @@
     padding: 30px;
     border-radius: 15px;
     /* box-shadow:  0 0 10px rgba(0, 0, 0, alpha); */
-    width: 500px;
+    max-width: 500px;
 
 }
 
@@ -116,6 +122,14 @@
     background-color: rgb(26, 94, 241);
     color: white;
     padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    height: 35px;
+    border-radius: 15px;
+    border: 0px;
+    padding: 0 9px;
+    border: 2px solid black;
+    font-size: 16px;
 }
 .form-group-terms{
     display: flex;
@@ -274,6 +288,30 @@ table td a:hover {
   } */
 
 /*---------------------CONTACT FORM------------*/
+
+
+
+#containercontact {
+  background-image: url(/public/images/viewparis.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 600px;
+  display: flex; 
+  align-items: center; /* Centre verticalement les éléments */
+  justify-content: center;
+}
+ 
+ 
+ #containercontact form{
+     padding-top: 20px;
+     display: flex;
+     align-self: center;
+     flex-direction: column;
+     margin: 0 auto; /*  pour centrer horizontalement le formulaire */
+  
+
+ }
 form.contact-form {
     margin-top: 20px;
     padding: 20px;
@@ -471,8 +509,86 @@ form.contact-form {
   cursor: pointer;
 }
 
-.navbg {
-  /* Styles pour votre navigation */
+
+
+
+
+
+
+
+/* Styles pour le formulaire */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Autres styles CSS pour votre page */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.btn_register {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box; /* Ajout de cette règle */
+}
+/* Styles pour le rendu responsive */
+@media screen and (max-width: 767px) {
+  form {
+    padding: 10px;
+  }
+  
+  .form-control {
+    font-size: 12px;
+  }
+  
+  .btn_register {
+    font-size: 14px;
+  }
+  .groupform1,.groupform2{
+
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+
+}
+.block_form {
+ display: flex;
+ align-items: center;
+ align-self: center;
+padding-top: 150px;
+
+}
+}

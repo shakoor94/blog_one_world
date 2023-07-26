@@ -3,68 +3,63 @@
 {% block title %}Hello ConditionController!{% endblock %}
 
 {% block body %}
- <main class="main-cgu">
-        <section>
-            <div class="block-general-adm">
-
-                <div class="menu-lien-utiles">
-                    <ul>
-                        <li>
-                            <a href="mentions_legales.html">Mentions légales</a>
-                        </li>
-                        <li>
-                            <a href="confidantialite.html">Politique de confidentialité</a>
-                        </li>
-                        <li>
-                            <a href="cgu.html">
-                                Conditions générales d'utilisation
-                            </a>
-                        </li>
-                    
-                        <li>
-                            <a href="cookies.html">Cookies</a>
-                        </li>
-                    
-                     
-                    </ul>
-                </div>
-                <div class="container-conditions">
-
-                    <h1>Politique de cookies</h1>
-                    <p>Cette politique de cookies explique comment nous utilisons les cookies sur notre site.</p>
-                    <h2>1. Qu'est-ce qu'un cookie ?</h2>
-                    <p>Un cookie est un petit fichier texte stocké sur votre appareil lorsque vous visitez un site Web.
-                        Il permet au site de mémoriser vos actions et préférences (telles que la connexion, la langue,
-                        la taille de la police et d'autres préférences d'affichage) sur une période donnée, afin que
-                        vous n'ayez pas à les saisir à chaque fois que vous revenez sur le site ou naviguez d'une page à
-                        une autre.</p>
-                    <h2>2. Types de cookies utilisés</h2>
-                    <p>Nous utilisons les types de cookies suivants sur notre site :</p>
-                    <ul>
-                        <li>Cookies nécessaires : ces cookies sont essentiels pour vous permettre de naviguer sur notre
-                            site et d'utiliser ses fonctionnalités.</li>
-                        <li>Cookies de performance : ces cookies collectent des informations sur la manière dont vous
-                            utilisez notre site, telles que les pages que vous visitez le plus souvent. Ces informations
-                            nous aident à améliorer la performance et la convivialité du site.</li>
-                        <li>Cookies de fonctionnalité : ces cookies permettent au site de mémoriser les choix que vous
-                            faites (comme votre nom d'utilisateur, votre langue ou votre région) et de fournir des
-                            fonctionnalités améliorées et personnalisées.</li>
-                        <li>Cookies de ciblage : ces cookies sont utilisés pour diffuser des publicités qui sont
-                            pertinentes pour vous et vos intérêts. Ils sont également utilisés pour limiter le nombre de
-                            fois où vous voyez une publicité et mesurer l'efficacité d'une campagne publicitaire.</li>
-                    </ul>
-                    <h2>3. Gestion des cookies</h2>
-                    <p>Vous pouvez gérer vos préférences en matière de cookies en ajustant les paramètres de votre
-                        navigateur pour accepter, refuser ou supprimer les cookies. Veuillez consulter la documentation
-                        de votre navigateur pour obtenir des instructions détaillées sur la gestion des cookies.</p>
-                    <h2>4. Consentement</h2>
-                    <p>En continuant à utiliser notre site, vous consentez à l'utilisation des cookies conformément à
-                        cette politique de cookies.</p>
-                    <h2>5. Contactez-nous</h2>
-                    <p>Si vous avez des questions concernant notre utilisation des cookies, veuillez nous contacter à
-                        [adresse e-mail de contact].</p>
-
-        </section>
-
-    </main>
+<main class="main-cgu">
+    <section>
+        <div class="block-general-adm">
+            <div class="menu-lien-utiles">
+                <ul>
+                    <li>
+                        <a href="{{ path('app_mentions_legales') }}">
+                            Mentions légales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_politique_confidentialite') }}">Politique de confidentialité</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_conditions_generales') }}">Conditions générales d'utilisations</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_cookie') }}">Cookies</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container-conditions">
+                <h1>Politique de cookies</h1>
+                <p>Cette politique de cookies explique comment j'utilise les cookies sur mon site.</p>
+                <h2>1. Qu'est-ce qu'un cookie ?</h2>
+                <p>Un cookie est un petit fichier texte stocké sur votre appareil lorsque vous visitez un site Web.
+                    Il permet au site de mémoriser vos actions et préférences (telles que la connexion, la langue,
+                    la taille de la police et d'autres préférences d'affichage) sur une période donnée, afin que
+                    vous n'ayez pas à les saisir à chaque fois que vous revenez sur le site ou naviguez d'une page à
+                    une autre.</p>
+                <h2>2. Types de cookies utilisés</h2>
+                <p>J'utilise les types de cookies suivants sur mon site :</p>
+                <ul>
+                    <li>Cookies nécessaires : ces cookies sont essentiels pour vous permettre de naviguer sur mon
+                        site et d'utiliser ses fonctionnalités.</li>
+                    <li>Cookies de performance : ces cookies collectent des informations sur la manière dont vous
+                        utilisez mon site, telles que les pages que vous visitez le plus souvent. Ces informations
+                        m'aident à améliorer la performance et la convivialité du site.</li>
+                    <li>Cookies de fonctionnalité : ces cookies permettent au site de mémoriser les choix que vous
+                        faites (comme votre nom d'utilisateur, votre langue ou votre région) et de fournir des
+                        fonctionnalités améliorées et personnalisées.</li>
+                    <li>Cookies de ciblage : ces cookies sont utilisés pour diffuser des publicités qui sont
+                        pertinentes pour vous et vos intérêts. Ils sont également utilisés pour limiter le nombre de
+                        fois où vous voyez une publicité et mesurer l'efficacité d'une campagne publicitaire.</li>
+                </ul>
+                <h2>3. Gestion des cookies</h2>
+                <p>Vous pouvez gérer vos préférences en matière de cookies en ajustant les paramètres de votre
+                    navigateur pour accepter, refuser ou supprimer les cookies. Veuillez consulter la documentation
+                    de votre navigateur pour obtenir des instructions détaillées sur la gestion des cookies.</p>
+                <h2>4. Consentement</h2>
+                <p>En continuant à utiliser mon site, vous consentez à l'utilisation des cookies conformément à
+                    cette politique de cookies.</p>
+                <h2>5. Contactez-moi</h2>
+                <p>Si vous avez des questions concernant mon utilisation des cookies, veuillez me contacter à
+                    [adresse e-mail de contact].</p>
+            </div>
+        </div>
+    </section>
+</main>
 {% endblock %}

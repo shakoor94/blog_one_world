@@ -82,20 +82,22 @@ class RegisterFormType extends AbstractType
                 'label' => 'Nom',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez renseignez ce champ.'
+                        'message' => 'Veuillez renseigner ce champ.',
                     ]),
                     new Length([
                         'min' => 1,
                         'max' => 100,
-                        'minMessage' => "Votre nom est invalide. Le prénom doit comporter au minimum {{ limit }} caractères.",
-                        'maxMessage' => "Votre nom est invalide. Le prénom doit comporter au maximum {{ limit }} caractères.",
+                        'minMessage' => "Votre nom est invalide. Le nom doit comporter au minimum {{ limit }} caractères.",
+                        'maxMessage' => "Votre nom est invalide. Le nom doit comporter au maximum {{ limit }} caractères.",
                     ]),
                     new Regex([
                         'pattern' => '/^[A-Za-z]+$/',
                         'message' => 'Votre nom ne doit contenir que des lettres.',
                     ]),
                 ],
+              
             ])
+            
             ->add('pseudo', TextType::class, [
                 'label' => 'Pseudo',
                 'constraints' => [
@@ -107,6 +109,7 @@ class RegisterFormType extends AbstractType
                         'max' => 30,
                         'minMessage' => "Votre pseudo est invalide. Le pseudo doit comporter au minimum {{ limit }} caractères.",
                         'maxMessage' => "Votre pseudo est invalide. Le pseudo doit comporter au maximum {{ limit }} caractères.",
+                        
                     ]),
                 ],
             ])
@@ -118,10 +121,10 @@ class RegisterFormType extends AbstractType
             //     ],
             // ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Valider',
+                'label' => 'Inscription',
                 'validate' => false,
                 'attr' => [
-                    'class' => 'd-block mx-auto col-3 btn btn-primary'
+                    'class' => 'btn_register'
                 ],
             ]);
     }
@@ -143,3 +146,9 @@ class RegisterFormType extends AbstractType
         ]);
     }
 }
+
+
+
+
+
+

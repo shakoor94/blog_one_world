@@ -19,7 +19,8 @@ class CommentFormType extends AbstractType
                 'label' => 'Commentaire',
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Envoyer',
+                'label' => 'Commentez',
+                'attr' => ['class' => 'envoyer-btn'], // Ajoutez la classe 'envoyer-btn' au label du bouton Envoyer
             ]);
     }
 

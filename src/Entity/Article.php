@@ -25,8 +25,14 @@ class Article
     #[ORM\Column(type: Types::TEXT)]
     private ?string $content = null;
 
+    #[ORM\Column(type: Types::TEXT)] // Deuxième champ "content2" de type "textarea"
+    private ?string $content2 = null;
+
     #[ORM\Column(length: 255)]
     private ?string $image = null;
+
+    #[ORM\Column(length: 255, nullable: true)] // Deuxième champ "image2" pour la deuxième image
+    private ?string $image2 = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $comment = null;
@@ -36,13 +42,13 @@ class Article
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?DateTimeInterface $updatedAt = null;
-    
+
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?DateTimeInterface $deletedAt = null;
 
     #[ORM\OneToMany(targetEntity: Comment::class, mappedBy: "article")]
     private Collection $comments;
-    
+
     #[ORM\ManyToOne(targetEntity: Country::class, inversedBy: 'articles')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Country $country = null;
@@ -84,16 +90,38 @@ class Article
 
         return $this;
     }
+    // Getters et Setters pour le champ "content2"
+    public function getContent2(): ?string
+    {
+        return $this->content2;
+    }
 
+    public function setContent2(string $content2): self
+    {
+        $this->content2 = $content2;
+
+        return $this;
+    }
+  
     public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
+        return $this;
+    }
 
+    public function getImage2(): ?string
+    {
+        return $this->image2;
+    }
+
+    public function setImage2(?string $image2): self
+    {
+        $this->image2 = $image2;
         return $this;
     }
 
@@ -108,7 +136,7 @@ class Article
 
         return $this;
     }
-    
+
     public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->createdAt;

@@ -42,6 +42,7 @@ header nav ul li {
 
     padding: 0px 20px;
     color: white;
+   
 }
 
 header nav a {
@@ -100,6 +101,7 @@ li {
     display: inline-block;
     padding-right: 20px;
     color: white;
+    font-size: 20px;
 }
 
 
@@ -139,7 +141,8 @@ li {
     position: absolute;
     left: 5%;
     width: 60vw;
-    height: auto;
+    max-height: 80vh;
+    overflow-y: auto; /* Ajout de la propriété overflow-y avec la valeur auto */
     background-image: url(/public/images/earth.jpeg);
     background-size: cover;
     background-position: center;
@@ -147,7 +150,7 @@ li {
     z-index: 999;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+  }
 
 .sub_menu ul {
     display: flex;
@@ -222,7 +225,7 @@ font-weight: bold;
 
     .single-logo {
         display: block;
-        width: 40px;
+        width: 90px;
         margin-left: 15px;
     }
 
@@ -245,6 +248,7 @@ font-weight: bold;
         z-index: 1000;
         list-style: none;
     }
+   
 
     #burger {
         font-size: 40px;
@@ -317,24 +321,12 @@ font-weight: bold;
         transition: 0.5s;
     }
 
-    .sub-menu {
-        width: 80%;
-        max-height: 100vh;
+    .sub_menu {
+        width: 90%;
+      height: 100vh;
 
     }
 
-    .sub-menu-ul {
-        background-color: rgb(255, 255, 255, 0.9);
-        max-width: 90%;
-
-    }
-
-    .sub-menu li a {
-        line-height: 1px;
-        font-size: 20px;
-        font-weight: 700;
-        color: #0019A7;
-    }
 
     .loginBtn {
         padding: 5px;

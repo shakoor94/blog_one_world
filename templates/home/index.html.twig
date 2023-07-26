@@ -1,134 +1,117 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Blog Voyage - One world -
+{% block title %}
+    Blog Voyage - One world -
 {% endblock %}
 
 {% block body %}
+    <header style="background-image: url('{{ asset('images/pepite.jpg') }}');">
+        <h1>Blog de voyage: Partez à la conquête du monde</h1>
+    </header>
 
+    <main>
+        <div class="block-logo-original">
+            <img class="logo_original" src="{{ asset('images/logo_one_world-no-bg.png') }}" alt="logo-one_world">
+        </div>
 
-	<header style="background-image: url('{{ asset('images/pepite.jpg') }}');">
+        <section class="container_first_gallery">
+            <div class="container_group_gallery">
+                <div class="block_group1" style="background-image: url('{{ asset('images/documents-a-preparer.jpeg') }}');">
+                    <div class="borderpics">
+                        <div class="info_title">
+                            <h4>
+                                <a href="{{ path('astuces_preparatifs', {'id': 'preparerdoc'}) }}">
+                                    Préparez vos documents</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_group2" style="background-image: url('{{ asset('images/reservation.jpeg') }}');">
+                    <div class="borderpics">
+                        <div class="info_title">
+                            <h4>
+                                <a href="#">Réservations</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="block_group3" style="background-image: url('{{ asset('images/qui-suis-je.jpeg') }}');">
+                    <div class="borderpics">
+                        <div class="info_title">
+                            <h4>
+                                <a href="{{ path('show_apropos', {'id': 'show_apropos#blocwho'}) }}">Qui-suis-je ?</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section id="container_spirit" style="background-image: url('{{ asset('images/beaux-villas-eau-dans-ile-maldives-tropicales-au-lever-du-soleil.jpg') }}');">
+            <div class="block_description">
+                <h2>L'essence de ce Blog</h2>
+                <div class="text_spirit">
+                    <p>Découvrez un monde d'inspiration à travers mon blog de voyage. Plongez dans des récits captivants, des images époustouflantes et des conseils pratiques qui vous transporteront vers de nouveaux horizons.</p>
+                    <p>Que vous soyez un voyageur passionné ou simplement en quête d'évasion, laissez-vous emporter par mes histoires, mes découvertes et mes expériences uniques.</p>
+                </div>
+            </div>
+        </section>
 
-		<h1>Blog de voyage: Partez à la conquête du monde</h1>
+        <section id="last_article">
+            <h2 class="title-container-partenaire">Les Derniers articles</h2>
+            <div class="container_card_article">
+                <div class="card_article">
+                    <img src="{{ asset('images/nusa-penida1.JPG') }}" alt="plage_nusa_penida">
+                    <div class="info">
+                        <h3 class="titleImg">
+                            Kelingking Beach
+                            <br>
+                            <br>
+                        </h3>
+                        <a href="{{ path('article', {'id': 5}) }}" class="btn">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="card_article">
+                    <img src="{{ asset('images/comino_malte.jpg') }}" alt="comino_malte">
+                    <div class="info">
+                        <h3 class="titleImg">
+                            Blue Lagoon
+                            <br>
+                            <br>
+                        </h3>
+                        <a href="{{ path('article', {'id': 10}) }}" class="btn">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="card_article">
+                    <img src="{{ asset('images/desert_dubai1.jpg') }}" alt="desertdubai">
+                    <div class="info">
+                        <h3 class="titleImg">
+                            Desert de Dubai
+                            <br>
+                            <br>
+                        </h3>
+                        <a href="{{ path('article', {'id': 2}) }}" class="btn">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-	</header>
-
-
-	<main>
-		<div class="block-logo-original">
-			<img class="logo_original" src="{{ asset('images/logo_one_world-no-bg.png') }}" alt="logo-one_world">
-		</div>
-
-
-		<section class="container_first_galery">
-			<div class="container_group_gallery">
-				<div class="block_group1" style="background-image: url('{{ asset('images/documents-a-preparer.jpeg') }}');">
-					<div class="borderpics">
-						<div class="info_title">
-							<h4>
-								<a href="{{ path('astuces_preparatifs', {'id': 'preparerdoc'}) }}">
-								Préparez ses documents</a>
-						</h4>
-					</div>
-
-				</div>
-			</div>
-			<div class="block_group2" style="background-image: url('{{ asset('images/reservation.jpeg') }}');">
-				<div class="borderpics">
-					<div class="info_title">
-						<h4>
-							<a href="">Reservations</a>
-						</h4>
-					</div>
-
-				</div>
-			</div>
-			<div class="block_group3" style="background-image: url('{{ asset('images/qui-suis-je.jpeg') }}');">
-				<div class="borderpics">
-					<div class="info_title">
-						<h4>
-								<a href="{{ path('show_apropos', {'id': 'show_apropos#blocwho'}) }}">Qui-suis-je ?</a>
-
-						</h4>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-	</section>
-
-
-	<section id="container_spirit" style="background-image: url('{{ asset('images/beaux-villas-eau-dans-ile-maldives-tropicales-au-lever-du-soleil.jpg') }}');">
-
-		<div class="block_description">
-			<h2>L'essence de ce Blog
-			</h2>
-			<div>
-				<p>Découvrez un monde d'inspiration à travers mon blog de voyage. Plongez dans des récits captivants, des images époustouflantes et des conseils pratiques qui vous transporteront vers de nouveaux horizons.</p>
-			</br>
-			<p>Que vous soyez un voyageur passionné ou simplement en quête d'évasion, laissez-vous emporter par mes histoires, mes découvertes et mes expériences uniques.</p>
-		</div>
-
-	</section>
-
-
-	<section id="last_article">
-		<h2 class="title-container-partenaire">Les Derniers articles</h2>
-		<div class="container_card_article">
-			<div class="card_article"><img src="{{ asset('images/nusa-penida1.JPG') }}" alt="plage_nusa_penida"><div class="info">
-					<h3 class="titleImg">
-						Kelingking Beach
-						<br>
-						<br>
-					</h3>
-
-
-					<a href="{{ path('article', {'id': 5}) }}" class="btn">En savoir plus</a>
-
-				</div>
-			</div>
-			<div class="card_article"><img src="{{ asset('images/comino_malte.jpg') }}" alt="comino_malte"><div class="info">
-					<h3 class="titleImg">
-						Blue Lagoon<br>
-						<br></a>
-				</h3>
-
-				<a href="{{ path('article', {'id': 10}) }}" class="btn">En savoir plus</a>
-
-			</div>
-
-		</div>
-
-		<div class="card_article"><img src="{{ asset('images/desert_dubai1.jpg') }}" alt="desertdubai"><div class="info">
-				<h3 class="titleImg">
-					Desert de Dubai<br>
-					<br></a>
-
-			</h3>
-			<a href="{{ path('article', {'id': 2}) }}" class="btn">En savoir plus</a>
-		</div>
-	</section>
-
-
-	<section id="intro-astuces">
-		<h2>
-			Organisez et Partez en Toute Confiance !</h2>
-		<div class="container_flex">
-			<div class="block-description">
-				<p>Découvrez des précieux conseils et astuces pour voyager en toute confiance. Que vous soyez un voyageur aguerri ou débutant, les conseils et le partage d'experiences sont toujours la bienvenue.
-				</p>
-				<p>
-					Je vous propose des informations pratiques pour planifier votre itinéraire, économiser de l'argent, choisir le meilleur hébergement et faire face aux imprévus.
-				</p>
-				<div class="block-btn-read-more">
-					<a href="" class="btn-read-more">En savoir plus</a>
-				</div>
-
-
-			</div>
-			<div class="img-block-description"><img src="{{ asset('images/home-preparatif.jpeg') }}">
-			</div>
-		</div>
-	</section>
-</main>{% endblock %}
+        <section id="intro-astuces">
+            <h2>
+                Organisez et Partez en Toute Confiance !
+            </h2>
+            <div class="container_flex">
+                <div class="block-description">
+                    <p>Découvrez de précieux conseils et astuces pour voyager en toute confiance. Que vous soyez un voyageur aguerri ou débutant, les conseils et le partage d'expériences sont toujours les bienvenus.</p>
+                    <p>Je vous propose des informations pratiques pour planifier votre itinéraire, économiser de l'argent, choisir le meilleur hébergement et faire face aux imprévus.</p>
+                    <div class="block-btn-read-more">
+                        <a href="{{ path('show_astuce') }}" class="btn-read-more">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="img-block-description">
+                    <img src="{{ asset('images/home-preparatif.jpeg') }}" alt="preparatifs">
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

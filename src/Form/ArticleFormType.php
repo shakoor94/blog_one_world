@@ -24,11 +24,14 @@ class ArticleFormType extends AbstractType
                 'label' => "Titre de l'article"
             ])
             ->add('content', TextareaType::class, [
-                'label' => "Description"
+                'label' => "Description principal"
+            ])
+            ->add('content2', TextareaType::class, [ // Deuxième champ "content2" de type "textarea"
+                'label' => "Contenu "
             ])
             ->add('image', FileType::class, [
                 'data_class' => null,
-                'label' => 'Image',
+                'label' => 'Image 1',
                 'required' => false,
                 'constraints' => [
                     new File([
@@ -48,6 +51,28 @@ class ArticleFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('image2', FileType::class, [ // Deuxième champ "image2" pour télécharger une deuxième image
+                'data_class' => null,
+                'label' => 'Image 2',
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '5M',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/jpg',
+                            'image/png',
+                        ],
+                        'mimeTypesMessage' => 'Veuillez télécharger une image au format JPEG, JPG ou PNG.',
+                    ]),
+                    new Image([
+                        'minWidth' => 200,
+                        'minHeight' => 200,
+                        'minWidthMessage' => 'La largeur de la deuxième image doit être d\'au moins 200 pixels.',
+                        'minHeightMessage' => 'La hauteur de la deuxième image doit être d\'au moins 200 pixels.',
+                    ]),
+                ],
+            ])
             ->add('country', EntityType::class, [
                 'class' => Country::class,
                 'label' => "Pays",
@@ -55,7 +80,7 @@ class ArticleFormType extends AbstractType
                 'placeholder' => 'Sélectionnez un pays',
             ])
             ->add('submit', SubmitType::class, [
-                'label' => "Créer",
+                'label' => "Ajouter",
                 'attr' => [
                     'class' => ''
                 ]

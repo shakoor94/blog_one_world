@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 class ArticleController extends AbstractController
 {
     #[Route('/article/create', name: 'create_article')]
-    public function createArticle(Request $request, EntityManagerInterface $entityManager): Response
+    public function createArticle(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
         $article = new Article($entityManager);
         $form = $this->createForm(ArticleFormType::class, $article);
@@ -28,6 +28,24 @@ class ArticleController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $title = $form->get('title')->getData();
             $article->setTitle($title);
+
+            $content = $form->get('content')->getData(); // Récupérez le contenu saisi dans le champ "content"
+            $article->setContent($content);
+
+            $content2 = $form->get('content2')->getData(); // Récupérez le contenu saisi dans le champ "content2"
+            $article->setContent2($content2);
+
+            /** @var UploadedFile $image */
+            $image = $form->get('image')->getData();
+            if ($image) {
+                $this->handleFile($image, $article, $slugger);
+            }
+
+            /** @var UploadedFile $image2 */
+            $image2 = $form->get('image2')->getData();
+            if ($image2) {
+                $this->handleFile($image2, $article, $slugger);
+            }
 
             // Enregistrez l'article dans la base de données
             $article->save();
@@ -41,6 +59,7 @@ class ArticleController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+  
     #[Route('/modifier-un-article/{id}', name: 'update_article', methods: ['GET', 'POST'])]
     public function updateArticle(Article $article, Request $request, ArticleRepository $repository, SluggerInterface $slugger): Response
     {
@@ -50,13 +69,16 @@ class ArticleController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $article->setUpdatedAt(new DateTime());
 
-            /** @var UploadedFile $photo */
-            $photo = $form->get('image')->getData();
+            /** @var UploadedFile $image */
+            $image = $form->get('image')->getData();
+            if ($image) {
+                $this->handleFile($image, $article, $slugger);
+            }
 
-            if ($photo) {
-                $this->handleFile($photo, $article, $slugger);
-            } else {
-                $article->setImage($article->getImage());
+            /** @var UploadedFile $image2 */
+            $image2 = $form->get('image2')->getData();
+            if ($image2) {
+                $this->handleFile($image2, $article, $slugger);
             }
 
             $repository->save($article, true);
@@ -70,16 +92,17 @@ class ArticleController extends AbstractController
             'articles' => $repository->findAll(),
         ]);
     }
+
     #[Route('/supprimer-un-article/{id}', name: 'hard_delete_article', methods: ['GET'])]
     public function hardDeleteCountry(Article $article, ArticleRepository $repository, EntityManagerInterface $entityManager): Response
     {
         $entityManager->remove($article);
         $entityManager->flush();
-    
+
         $this->addFlash('success', "L'article a été supprimé définitivement");
         return $this->redirectToRoute('show_dashboard');
     }
-    
+
     private function handleFile(UploadedFile $photo, Article $article, SluggerInterface $slugger)
     {
         $extension = '.' . $photo->guessExtension();

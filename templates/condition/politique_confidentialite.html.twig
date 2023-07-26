@@ -1,20 +1,71 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ConditionController!{% endblock %}
+{% block title %}Politique de confidentialité{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<main class="main-cgu">
+    <section>
+        <div class="block-general-adm">
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/DORANCO/Projet_website_doranco/One_world/src/Controller/ConditionController.php'|file_link(0) }}">src/Controller/ConditionController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/DORANCO/Projet_website_doranco/One_world/templates/condition/index.html.twig'|file_link(0) }}">templates/condition/index.html.twig</a></code></li>
-    </ul>
-</div>
+            <div class="menu-lien-utiles">
+                <ul>
+                    <li>
+                    		<a href="{{ path('app_mentions_legales') }}">
+				Mentions légales
+			</a>
+                    </li>
+                    <li>
+                	<a href="{{ path('app_politique_confidentialite') }}">Politique de confidentialité</a>
+                    </li>
+                    <li>
+                 <a href="{{ path('app_conditions_generales') }}">Conditions générales d'utilisations</a>
+                    </li>
+
+                    <li>
+                	<a href="{{ path('app_cookie') }}">Cookies</a>
+                    </li>
+
+
+                </ul>
+            </div>
+            <div class="container-conditions">
+
+                <h1>Politique de confidentialité</h1>
+                <p>Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et
+                    protégeons vos informations personnelles lorsque vous utilisez notre site.</p>
+                <h2>1. Collecte des informations</h2>
+                <p>Nous collectons les informations personnelles que vous nous fournissez volontairement lors de
+                    l'inscription ou de l'utilisation de notre site.</p>
+                <p>Les informations personnelles que nous collectons peuvent inclure votre nom, votre adresse
+                    e-mail, votre date de naissance, votre localisation, etc.</p>
+                <h2>2. Utilisation des informations</h2>
+                <p>Nous utilisons les informations personnelles que nous collectons pour vous fournir nos services,
+                    personnaliser votre expérience, améliorer notre site et communiquer avec vous.</p>
+                <h2>3. Divulgation des informations</h2>
+                <p>Nous ne vendons, n'échangeons ni ne louons vos informations personnelles à des tiers sans votre
+                    consentement, sauf si cela est nécessaire pour vous fournir nos services ou si la loi l'exige.
+                </p>
+                <h2>4. Protection des informations</h2>
+                <p>Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos informations
+                    personnelles contre tout accès non autorisé, divulgation, altération ou destruction.</p>
+                <h2>5. Cookies</h2>
+                <p>Nous utilisons des cookies pour améliorer votre expérience sur notre site. Les cookies sont de
+                    petits fichiers texte stockés sur votre appareil qui nous aident à analyser les habitudes de
+                    navigation et à personnaliser le contenu.</p>
+                <h2>6. Liens vers des sites tiers</h2>
+                <p>Notre site peut contenir des liens vers des sites tiers. Nous n'avons aucun contrôle sur le
+                    contenu ou les pratiques de confidentialité de ces sites, et nous déclinons toute responsabilité
+                    à cet égard.</p>
+                <h2>7. Modifications de la politique de confidentialité</h2>
+                <p>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Les
+                    modifications seront publiées sur cette page avec une nouvelle date d'entrée en vigueur.</p>
+                <h2>8. Contactez-nous</h2>
+                <p>Si vous avez des questions concernant cette politique de confidentialité, veuillez nous contacter
+                    à [one_world@gmail.com].</p>
+            </div>
+
+    </section>
+
+</main>
 {% endblock %}

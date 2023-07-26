@@ -4,9 +4,7 @@
 {% endblock %}
 
 {% block body %}
-<nav class='navbg'>
-
-</nav>
+	<nav class='navbg'></nav>
 	<section class="content-wrapper">
 
 		<div class="container-article">
@@ -14,28 +12,33 @@
 			<div class='img-article-portrait'>
 				<img src="{{ asset('uploads/' ~ article.image) }}" alt="{{ article.title }}"></div>
 			<section id="description_country">
-				<p>{{ article.content }}</p>
+				<p class='contenu1'>{{ article.content }}</p>
+					<img src="{{ asset('uploads/' ~ article.image2) }}" alt="{{ article.title }}">
+				<p class='contenu2'>{{ article.content2 }}</p>
+			
+			
 			</section>
-			<div class="comment-section">
-				<h2>Commentaires</h2>
-				{% for comment in article.comments %}
-					<div class="comment">
-						<p class="author">Par
-							{{ comment.getPseudo }}
-							le
-							{{ comment.createdAt|date('d/m/Y H:i') }}</p>
-						<p class="content">{{ comment.content }}</p>
-					</div>
-				{% endfor %}
 
-				<div class="comment-form">
-					<h2>Laisser un commentaire</h2>
-					{{ form_start(form) }}
-					{{ form_row(form.content) }}
-					{{ form_row(form.submit) }}
-					{{ form_end(form) }}
-				</div>
-			</div>
 		</div>
 	</section>
+	<div class="comment-section" style="background-image: url('{{ asset('images/bgcomment.jpeg') }}');">
+		<h2>Commentaires</h2>
+		{% for comment in article.comments %}
+			<div class="comment">
+				<p class="author">Par
+					{{ comment.getPseudo }}
+					le
+					{{ comment.createdAt|date('d/m/Y H:i') }}</p>
+				<p class="content">{{ comment.content }}</p>
+			</div>
+		{% endfor %}
+
+		<div class="comment-form">
+			<h2>Laissez un commentaire</h2>
+			{{ form_start(form) }}
+			{{ form_row(form.content) }}
+			{{ form_row(form.submit) }}
+			{{ form_end(form) }}
+		</div>
+	</div>
 {% endblock %}

@@ -49,6 +49,7 @@ body{
 .alert-success {
   background-color: #15f115d0;
   color: #FFFFFF;
+  padding: 20px;
 }
 
 .alert-warning {
@@ -57,6 +58,7 @@ body{
 }
 
 .alert-error {
+  padding: 20px;
   background-color: #FF0000;
   color: #FFFFFF;
 }
@@ -82,4 +84,27 @@ body {
 .navbg{
   background-color: rgb(4,44,98);
   height: 100px;
+}
+
+.alert-success{
+  width: 300px;
+  display: block;
+  margin: auto;
+}
+.error-message {
+  color: #FF0000;
+}
+
+/* Styles pour le champ de textearea personnalisé */
+.custom-textarea {
+  width: 100%;
+  height: 300px; /* Hauteur personnalisée du champ */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Arial, sans-serif; /* Police de caractères personnalisée */
+  font-size: 16px; /* Taille de la police personnalisée */
+  line-height: 1.6; /* Hauteur de ligne personnalisée */
+  color: #333; /* Couleur du texte personnalisée */
+  /* Ajoutez d'autres styles personnalisés selon vos préférences */
 }

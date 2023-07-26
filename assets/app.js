@@ -29,10 +29,10 @@ window.addEventListener('DOMContentLoaded', function() {
   });
 
   // Mobile menu
-  var burger = document.querySelector('#burger');
-  var menu = document.querySelector('#menu-navigation');
-  var cross = document.querySelector('#close-cross');
-  var apli = document.querySelector('#nav-apli');
+  let burger = document.querySelector('#burger');
+  let menu = document.querySelector('#menu-navigation');
+  let cross = document.querySelector('#close-cross');
+  let apli = document.querySelector('#nav-apli');
 
   burger.addEventListener('click', function() {
       menu.classList.add('deploye', 'transition');
@@ -47,15 +47,15 @@ window.addEventListener('DOMContentLoaded', function() {
   });
 
   // Navbar scroll change
-  var navBar = document.querySelector('#menu-navigation');
-  var navBarOriginalColor = getComputedStyle(navBar).backgroundColor;
-  var navLinks = document.querySelectorAll('.lien');
-  var navOriginalColors = Array.from(navLinks).map(function(link) {
+  let navBar = document.querySelector('#menu-navigation');
+  let navBarOriginalColor = getComputedStyle(navBar).backgroundColor;
+  let navLinks = document.querySelectorAll('.lien');
+  let navOriginalColors = Array.from(navLinks).map(function(link) {
       return getComputedStyle(link).color;
   });
 
   window.addEventListener('scroll', function() {
-      var navBarPosition = navBar.getBoundingClientRect().top + window.scrollY;
+      let navBarPosition = navBar.getBoundingClientRect().top + window.scrollY;
       if (navBarPosition > 0) {
           navBar.style.backgroundColor = '#0098D1';
           for (var i = 0; i < navLinks.length; i++) {
